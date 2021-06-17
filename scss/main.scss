@@ -1,0 +1,101 @@
+// importing css from another file
+@import "reset";
+
+// Declaring variables
+$primary-color: lightgrey;
+$background-color: red;
+$main-container: blue;
+$max-width: 520px;
+body {
+  background-color: $primary-color;
+}
+.main {
+  max-width: $max-width;
+  background-color: $main-container;
+}
+
+// Sass variables have scope
+.scope {
+  $background-color: yellow;
+  $color: red;
+  background-color: $background-color;
+  color: $color;
+}
+
+// Local variables can be changed into a global variable
+.forced-global-variable {
+  $display-none: none !global;
+  display: $display-none;
+}
+.hiding-with-forced-global-variable {
+  display: $display-none;
+}
+
+// Nesting
+.nesting-parent {
+  .i-am-nested {
+    color: blue;
+  }
+  button {
+    background-color: red;
+    padding: 1em;
+    cursor: pointer;
+  }
+}
+
+// As many properties have same prefix sass has the solution for you
+.writing-less {
+  font: {
+    weight: bold;
+    size: 25px;
+    family: helvetica;
+  }
+}
+
+// partials
+@import "footer";
+
+// Mixins can be used throughout the website
+// inplace of Darkgray we can pass other colors if not replaced with any color it will be darkgray. KOOOL
+@mixin theme($theme: DarkGray) {
+  background: $theme;
+  box-shadow: 0 0 1px rgba($theme, 0.25);
+  color: white;
+}
+
+.mixins {
+  @include theme($theme: red);
+}
+.mixins2 {
+  @include theme;
+}
+
+// Extending/Inheriting
+// so the thing which we are going to extend should start from the % sign
+// Not because it is cool but because if they are never extended they will never be printed.
+
+%myButtons {
+  border: 2px solid $primary-color;
+  background-color: gray;
+  padding: 10px;
+  color: #333;
+}
+// This is one more base parent which can be extended but as it is never used
+// it wont get written to our main.css file, inshort this bro is not reaching the browsers
+%equal-heights {
+  display: flex;
+  flex-wrap: wrap;
+}
+.success {
+  @extend %myButtons;
+
+  border-color: lightgreen;
+}
+.error {
+  @extend %myButtons;
+  background-color: red;
+}
+.warning {
+  @extend %myButtons;
+  background-color: yellow;
+}

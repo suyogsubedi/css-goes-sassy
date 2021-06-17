@@ -1,0 +1,86 @@
+html,
+body,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: lightgrey;
+}
+
+.main {
+  max-width: 520px;
+  background-color: blue;
+}
+
+.scope {
+  background-color: yellow;
+  color: red;
+}
+
+.forced-global-variable {
+  display: none;
+}
+
+.hiding-with-forced-global-variable {
+  display: none;
+}
+
+.nesting-parent .i-am-nested {
+  color: blue;
+}
+
+.nesting-parent button {
+  background-color: red;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.writing-less {
+  font-weight: bold;
+  font-size: 25px;
+  font-family: helvetica;
+}
+
+footer {
+  background-color: red;
+  height: 10vh;
+  text-align: center;
+  color: white;
+}
+
+.mixins {
+  background: red;
+  -webkit-box-shadow: 0 0 1px rgba(255, 0, 0, 0.25);
+          box-shadow: 0 0 1px rgba(255, 0, 0, 0.25);
+  color: white;
+}
+
+.mixins2 {
+  background: DarkGray;
+  -webkit-box-shadow: 0 0 1px rgba(169, 169, 169, 0.25);
+          box-shadow: 0 0 1px rgba(169, 169, 169, 0.25);
+  color: white;
+}
+
+.success, .error, .warning {
+  border: 2px solid lightgrey;
+  background-color: gray;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  border-color: lightgreen;
+}
+
+.error {
+  background-color: red;
+}
+
+.warning {
+  background-color: yellow;
+}
+/*# sourceMappingURL=main.css.map */
