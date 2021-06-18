@@ -5,6 +5,7 @@
 $primary-color: lightgrey;
 $background-color: red;
 $main-container: blue;
+$functionalColor: black;
 $max-width: 520px;
 body {
   background-color: $primary-color;
@@ -98,4 +99,22 @@ body {
 .warning {
   @extend %myButtons;
   background-color: yellow;
+}
+
+// Function and if else
+@function set-text-color($color) {
+  // the lightness property comes as an default in sass.. We are telling to check the lightness of the color and if the color passed is a dark color then the
+  // text will be of white color but if the color pass is a light color then the color will be black
+  @if (lightness($color) >70) {
+    @return black;
+  } @else {
+    @return #fff;
+  }
+}
+
+section.function {
+  background-color: $functionalColor;
+  // I am passing the functionalcolor in the line below because our function looks at the color passed and chooses the font color
+  // our background color is black (which is set to functionalColor) that is why the text became white
+  color: set-text-color($functionalColor);
 }

@@ -83,4 +83,9 @@ footer {
 .warning {
   background-color: yellow;
 }
+
+section.function {
+  background-color: black;
+  color: #fff;
+}
 /*# sourceMappingURL=main.css.map */
